@@ -3,21 +3,31 @@
 import {
   Search,
   Bell,
-  MessageSquare,
+  MessageSquareMore,
   ChevronDown,
-  PanelLeft,
+  Menu,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-export function TopBar() {
+interface TopBarProps {
+  onOpenMobile: () => void;
+  isExpanded?: boolean;
+}
+
+export function TopBar({ onOpenMobile, isExpanded = false }: TopBarProps) {
   return (
-    <div className="h-[80px] bg-card border-b border-border fixed top-0 right-0 left-[67px] z-40 flex items-center justify-between px-6 lg:px-8">
-      {/* Left section: Optional icon or empty space based on design (there's a panel/book icon in the design left of search) */}
-      <div className="flex items-center gap-6 flex-1">
-        <button className="text-muted-foreground hover:text-foreground hidden md:block">
-          <PanelLeft className="w-6 h-6" strokeWidth={1.5} />
+    <div
+      className={`h-[80px] bg-card border-b border-[#E2E2EA] fixed top-0 right-0 z-30 transition-all duration-300 flex items-center justify-between px-4 lg:px-8 shadow-[inset_0px_-1px_0px_#E2E2EA] ${isExpanded ? "left-[240px]" : "left-[67px]"} max-md:left-0`}
+    >
+      <div className="flex items-center gap-4 flex-1">
+        {/* Hamburger Menu (Mobile Only) */}
+        <button
+          onClick={onOpenMobile}
+          className="text-muted-foreground hover:text-foreground md:hidden shrink-0"
+        >
+          <Menu className="w-6 h-6" strokeWidth={2} />
         </button>
 
         {/* Search Bar */}
@@ -25,46 +35,46 @@ export function TopBar() {
           <Input
             type="search"
             placeholder="Search"
-            className="w-full h-11 pl-5 pr-12 bg-background border border-border rounded-full text-sm focus-visible:ring-1 focus-visible:ring-primary/30 focus-visible:border-primary/50 transition-all font-medium placeholder:text-muted-foreground placeholder:font-normal"
+            className="w-full h-[50px] pl-[50px] pr-4 bg-[#FAFAFB] border border-[#F1F1F5] rounded-[48px] text-[14px] focus-visible:ring-1 focus-visible:ring-primary/30 focus-visible:border-primary/50 transition-all font-normal placeholder:text-[#92929D]"
           />
-          <button className="absolute right-3 top-1/2 transform -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary transition-colors">
-            <Search className="w-5 h-5" strokeWidth={1.5} />
+          <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-[#92929D] hover:text-primary transition-colors">
+            <Search className="w-6 h-6" strokeWidth={1.5} />
           </button>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-5 ml-4">
+      <div className="flex items-center gap-2 sm:gap-5 ml-4">
         <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
-            className="relative text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full h-10 w-10"
+            className="relative text-foreground hover:bg-muted/50 rounded-full h-10 w-10 cursor-pointer hidden sm:flex"
           >
-            <MessageSquare className="w-5 h-5" strokeWidth={1.5} />
-            <span className="absolute top-2 right-2 w-2 h-2 bg-success rounded-full border-2 border-card"></span>
+            <MessageSquareMore className="w-6 h-6" strokeWidth={1.5} />
+            <span className="absolute top-2 right-2 w-2 h-2 bg-success rounded-full border border-card"></span>
           </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="relative text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-full h-10 w-10"
+            className="relative text-foreground hover:bg-muted/50 rounded-full h-10 w-10 cursor-pointer"
           >
-            <Bell className="w-5 h-5" strokeWidth={1.5} />
-            <span className="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-success rounded-full border border-card"></span>
+            <Bell className="w-6 h-6" strokeWidth={1.5} />
+            <span className="absolute top-2 right-2 w-2 h-2 bg-success rounded-full border border-card"></span>
           </Button>
         </div>
 
-        <div className="h-6 w-px bg-border mx-1 hidden md:block"></div>
+        <div className="h-[34px] w-px bg-[#E2E2EA] mx-1 hidden sm:block"></div>
 
         <button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <Avatar className="h-9 w-9 border border-border">
-            <AvatarImage
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
-              alt="Minnie Armstrong"
-            />
+          <Avatar className="h-[34px] w-[34px]">
+            <AvatarImage src="/minnie-image.png" alt="Minnie Armstrong" />
             <AvatarFallback>MA</AvatarFallback>
           </Avatar>
-          <ChevronDown className="w-4 h-4 text-muted-foreground hidden md:block" />
+          <ChevronDown
+            className="w-[10px] h-[6px] text-[#696969] hidden md:block"
+            strokeWidth={3}
+          />
         </button>
       </div>
     </div>

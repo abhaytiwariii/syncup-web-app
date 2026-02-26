@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
+import { TrendingDown } from "lucide-react";
 
 interface JobStatsProps {
   title: string;
@@ -27,10 +27,12 @@ export function JobStats({ title, count, change, color }: JobStatsProps) {
               {count}
             </h3>
             <p className="text-[12px] text-muted-foreground mt-3 flex items-center gap-1.5 font-medium">
-              <TrendingUp
-                className="w-3.5 h-3.5 text-success"
-                strokeWidth={3}
-              />
+              <div className="h-7 w-7 flex justify-center items-center bg-[#1DBF7329] rounded-full">
+                <TrendingDown
+                  className="w-3.5 h-3.5 text-success "
+                  strokeWidth={3}
+                />
+              </div>
               <span className="text-success">{change.split(" ")[0]}</span>
               <span>{change.split(" ").slice(1).join(" ")}</span>
             </p>

@@ -18,7 +18,7 @@ export default function JobsDashboard() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-2xl md:text-[28px] font-bold text-foreground tracking-tight leading-tight">
-              Welcome back, Julie
+              Welcome back, Julie👋
             </h1>
             <p className="text-muted-foreground text-[14px] font-medium mt-1">
               Here's what you need to focus on today

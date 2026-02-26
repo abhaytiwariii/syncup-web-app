@@ -14,13 +14,11 @@ export default function HomePage() {
     {
       id: 1,
       author: "Pan Feng Shui",
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      avatar: "/post-profile1.png",
       timestamp: "12 April at 09:28 PM",
       content:
         "Had an amazing interaction with the founder of ABC Company, sharing my experience through this small article",
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=400&fit=crop",
+      image: "/post1.png",
       likes: 3,
       smiles: 8,
       comments: 25,
@@ -29,6 +27,50 @@ export default function HomePage() {
     },
     {
       id: 2,
+      author: "Clara Kim",
+      avatar: "/post-profile2.png",
+      timestamp: "12 April at 09:28 PM",
+      content:
+        "A Great Way To Generate All The Motivation You Need To Get Fit.",
+      image: "",
+      likes: 3,
+      smiles: 8,
+      comments: 25,
+      shares: 231,
+      saves: 24,
+    },
+    {
+      id: 3,
+      author: "Clara Kim",
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      timestamp: "12 April at 09:28 PM",
+      content:
+        "A Great Way To Generate All The Motivation You Need To Get Fit.",
+      image: "",
+      likes: 3,
+      smiles: 8,
+      comments: 25,
+      shares: 231,
+      saves: 24,
+    },
+    {
+      id: 4,
+      author: "Clara Kim",
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      timestamp: "12 April at 09:28 PM",
+      content:
+        "A Great Way To Generate All The Motivation You Need To Get Fit.",
+      image: "",
+      likes: 3,
+      smiles: 8,
+      comments: 25,
+      shares: 231,
+      saves: 24,
+    },
+    {
+      id: 5,
       author: "Clara Kim",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
@@ -48,7 +90,7 @@ export default function HomePage() {
     <div className="w-full bg-background min-h-screen">
       <div className="max-w-[1440px] mx-auto p-4 md:p-6 lg:p-8 flex flex-col lg:flex-row gap-6">
         {/* Left Column (Profile, Analytics, Stories) */}
-        <div className="hidden lg:flex flex-col gap-6 w-[310px] flex-shrink-0">
+        <div className="hidden lg:flex flex-col gap-6 w-[310px] shrink-0">
           <UserProfile />
           <AnalyticsCard />
           <SosmedStories />
