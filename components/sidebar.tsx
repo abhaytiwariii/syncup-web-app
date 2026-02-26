@@ -67,19 +67,15 @@ export function Sidebar({
 
       {/* PanelLeft Toggle Button */}
       <div
-        className={`flex ${isExpanded ? "px-4 mb-2" : "justify-center mb-4"}`}
+        className={`flex cursor-pointer absolute top-5 ${isExpanded ? "px-4 mb-2 -right-10" : "justify-center mb-4 -right-5"}`}
       >
         <button
           onClick={onToggleExpand}
-          className={`text-muted-foreground hover:text-primary transition-colors flex items-center gap-3 p-2 rounded-xl w-full
+          className={`text-muted-foreground hover:text-primary transition-colors flex items-center gap-3 p-2 rounded-xl w-full cursor-pointer
             ${isExpanded ? "hover:bg-muted justify-start" : "hover:bg-muted justify-center"}`}
         >
-          <PanelLeft className="w-6 h-6 shrink-0" strokeWidth={2} />
-          {isExpanded && (
-            <span className="text-[14px] font-medium whitespace-nowrap">
-              Collapse
-            </span>
-          )}
+          
+          <PanelLeft className={`w-6 h-6 shrink-0 md:block ${isMobileOpen ? "block" : "hidden"}`} strokeWidth={2} />
         </button>
       </div>
 
@@ -97,9 +93,9 @@ export function Sidebar({
               key={item.href}
               href={item.href}
               onClick={() => isMobileOpen && onCloseMobile?.()}
-              className={`flex items-center transition-all ${isExpanded ? "px-3 h-11 w-full rounded-xl gap-3" : "justify-center w-10 h-10 rounded-xl mb-4"} ${
+              className={`flex items-center transition-all ${isExpanded ? "px-3 h-11 w-full gap-3" : "justify-center w-10 h-10 mb-4"} ${
                 isActive
-                  ? "bg-primary/10 text-primary border-l-4 border-primary rounded-none" // Adjusting border logic based on typical sidebar active states
+                  ? "bg-primary/10 text-primary/80 border-l-4 border-primary rounded-none" // Adjusting border logic based on typical sidebar active states
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               } ${!isExpanded && isActive ? "border-l-4 rounded-none h-[44px] w-full border-primary min-w-[67px]" : ""}`}
               title={!isExpanded ? item.label : undefined}
@@ -131,8 +127,8 @@ export function Sidebar({
             onClick={() => isMobileOpen && onCloseMobile?.()}
             className={`flex items-center transition-all text-muted-foreground hover:bg-muted hover:text-foreground ${
               isExpanded
-                ? "px-3 h-11 w-full rounded-xl gap-3"
-                : "justify-center w-10 h-10 rounded-xl mb-4"
+                ? "px-3 h-11 w-full gap-3"
+                : "justify-center w-10 h-10 mb-4"
             }`}
             title={!isExpanded ? item.label : undefined}
           >

@@ -31,25 +31,27 @@ export function TopBar({ onOpenMobile, isExpanded = false }: TopBarProps) {
         </button>
 
         {/* Search Bar */}
-        <div className="relative w-full max-w-xl group">
-          <Input
-            type="search"
-            placeholder="Search"
-            className="w-full h-[50px] pl-[50px] pr-4 bg-[#FAFAFB] border border-[#F1F1F5] rounded-[48px] text-[14px] focus-visible:ring-1 focus-visible:ring-primary/30 focus-visible:border-primary/50 transition-all font-normal placeholder:text-[#92929D]"
-          />
-          <button className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-[#92929D] hover:text-primary transition-colors">
-            <Search className="w-6 h-6" strokeWidth={1.5} />
-          </button>
+        <div className="flex flex-1 justify-center px-4">
+          <div className="relative w-full max-w-xl group">
+            <Input
+              type="search"
+              placeholder="Search"
+              className="w-full h-[50px] pl-[50px]] pr-4 bg-[#FAFAFB] border border-[#F1F1F5] rounded-[48px] text-[14px] focus-visible:ring-1 focus-visible:ring-primary/30 focus-visible:border-primary/50 transition-all font-normal placeholder:text-[#92929D]"
+            />
+            <button className="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 flex items-center justify-center text-[#92929D] hover:text-primary transition-colors">
+              <Search className="w-6 h-6" strokeWidth={1.5} />
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center gap-2 sm:gap-5 ml-4">
+      <div className="flex items-center gap-2 sm:gap-5 sm:ml-4">
         <div className="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
-            className="relative text-foreground hover:bg-muted/50 rounded-full h-10 w-10 cursor-pointer hidden sm:flex"
+            className="relative text-foreground hover:bg-muted/50 rounded-full h-10 w-10 cursor-pointer sm:flex"
           >
             <MessageSquareMore className="w-6 h-6" strokeWidth={1.5} />
             <span className="absolute top-2 right-2 w-2 h-2 bg-success rounded-full border border-card"></span>
@@ -72,7 +74,7 @@ export function TopBar({ onOpenMobile, isExpanded = false }: TopBarProps) {
             <AvatarFallback>MA</AvatarFallback>
           </Avatar>
           <ChevronDown
-            className="w-[10px] h-[6px] text-[#696969] hidden md:block"
+            className="w-[20px] h-[20x] text-[#696969] hidden md:block"
             strokeWidth={3}
           />
         </button>

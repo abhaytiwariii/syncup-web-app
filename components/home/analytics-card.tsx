@@ -46,11 +46,11 @@ export function AnalyticsCard() {
 
       <div className="flex-1 w-full relative mt-4">
         {/* Simple inline SVG replacement for chart, since we don't have enough data points/real Recharts area, keeping it easy and monotone */}
-        <div className="w-[120%] h-[100px] absolute bottom-10 -left-[10%] opacity-80 pointer-events-none">
+        <div className="w-[120%] h-[100px] absolute bottom-10 opacity-80 pointer-events-none">
           <svg
             preserveAspectRatio="none"
             viewBox="0 0 100 50"
-            width="100%"
+            width="80%"
             height="100%"
           >
             <path
@@ -76,14 +76,13 @@ export function AnalyticsCard() {
           <span>Oct</span>
           <span className="text-primary font-semibold">Nov</span>
         </div>
-
-        {/* Lock overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-card/40 backdrop-blur-[1px] z-10 bottom-6">
-          <button className="flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:bg-primary/90 transition">
-            <Lock className="w-3.5 h-3.5" />
-            Analytics
-          </button>
-        </div>
+      </div>
+      {/* Lock overlay */}
+      <div className="absolute right-0 left-0 top-0 bottom-0 flex items-center justify-center bg-card/40 backdrop-blur-[1px] z-10 ">
+        <button className="flex items-center gap-1.5 bg-primary text-primary-foreground px-4 py-2 rounded-full text-xs font-medium shadow-lg hover:bg-primary/90 transition cursor-pointer">
+          <Lock className="w-3.5 h-3.5" />
+          Analytics
+        </button>
       </div>
     </div>
   );
