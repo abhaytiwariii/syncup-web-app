@@ -67,17 +67,15 @@ export default function JobsDashboard() {
         </div>
 
         {/* Charts Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="lg:col-span-2">
+        <div className="flex flex-col lg:flex-row items-start gap-6 mb-8">
+          <div className="w-full lg:w-2/3 flex flex-col gap-6">
             <VacancyChart />
+            <JobApplicationTable />
           </div>
-          <div className="lg:col-span-1">
+          <div className="w-full lg:w-1/3">
             <RecommendedJobs />
           </div>
         </div>
-
-        {/* Application Table */}
-        <JobApplicationTable />
       </div>
     </div>
   );
