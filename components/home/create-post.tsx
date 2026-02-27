@@ -9,8 +9,8 @@ export function CreatePost() {
       <h3 className="bg-card rounded-t-2xl border p-3 m-0 font-bold text-foreground pl-4 border-border shadow-sm">
         Create a Post
       </h3>
-      <div className="bg-card rounded-b-2xl border border-border p-4 flex items-center justify-between gap-4 shadow-sm relative">
-        <div className="flex items-center gap-4 flex-1">
+      <div className="bg-card rounded-b-2xl border border-border p-4 flex items-center justify-between sm:gap-4 shadow-sm relative">
+        <div className="flex items-center sm:gap-4 gap-2 ">
           <Avatar className="w-10 h-10 border border-border object-contain shrink-0">
             <AvatarImage
               className="object-cover"

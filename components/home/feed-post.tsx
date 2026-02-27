@@ -82,7 +82,7 @@ export function FeedPost({
 
       {/* Stats */}
       <div className="px-5 pb-4 text-[13px] font-semibold text-muted-foreground flex justify-between items-center">
-        <div className="flex items-center gap-4">
+        <div className="grid sm:grid-cols-3 grid-cols-2 items-center gap-4">
           <span className="cursor-pointer hover:text-foreground flex items-center gap-1.5">
             <ThumbsUp className="w-4 h-4" /> {likes}
           </span>
@@ -93,7 +93,7 @@ export function FeedPost({
             <SmilePlus className="w-4 h-4" />
           </span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="grid sm:grid-cols-3 max-[390px]:grid-cols-1 grid-cols-2 justify-end  items-center gap-4 [direction:rtl]">
           <span className="cursor-pointer hover:text-foreground flex items-center gap-1.5">
             <MessageSquare className="w-4 h-4" /> {comments} Comments
           </span>
@@ -114,7 +114,7 @@ export function FeedPost({
           <AvatarImage src="/user-profile-image.png" alt="You" />
           <AvatarFallback>You</AvatarFallback>
         </Avatar>
-        <div className="flex items-center gap-3 bg-muted/30 rounded-xl border border-border/50 p-2 pl-3 w-full">
+        <div className="flex items-center gap-3 bg-muted/30 rounded-xl border border-border/50 p-2 pl-3 w-full min-w-0">
           <input
             type="text"
             placeholder="Write your comment..."
